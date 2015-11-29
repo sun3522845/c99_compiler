@@ -1,0 +1,82 @@
+
+or
+xor
+and
+left_shift 
+right_shift *
+add
+subtract
+multiply
+divide *
+modular
+negative
+not
+
+call
+push
+pop
+
+jump
+jump_equal
+jump_not_equal *
+jump_above *
+jump_below *
+jump_above_equal *
+jump_below_equal *
+
+extend_byte *
+extend_word *
+shrink_to_byte
+shrink_to_word
+
+address
+load
+store
+
+move
+copy
+
+enum {
+    OPERAND_NULL = 123,
+    OPERAND_IMMED,
+    OPERAND_GLOBAL,
+    OPERAND_LOCAL,
+    OPERAND_ARGUMENT,
+    OPERAND_TEMPORARY,
+    OPERAND_LABEL,
+};
+
+// %o  normal operand
+// %d  immed
+// %l  label
+
+// %s  is_signed
+// %j  jump condition
+// %b  binary operator
+
+emit(OPCODE_BINARY, "%p %o %o %o", operter, o1, o2, o3);
+insn_t *insn = emit(OPCODE_BINARY, "%o %o %o", );
+insn->is_signed = 1;
+insn->binary_operator = 2;
+
+emit(OPCODE_, TOKEN_UNIX);
+emit(OPCODE_BINARY, '*', "%o %o %o", o1, o2, o3);
+emit(OPCODE_MULTIPLY, "%o %o %d", o1, o2, 4);
+
+struct insn_t {
+    chain_t chain;
+    char *opcode;
+    int operand_count;
+    operand_t *operand_array[3]; 
+
+    int is_signed;
+    int jump_condition;
+    int binary_operater;
+
+    insn_t(char *opcode);
+    insn_t(int label);
+    void add_operand(operand_t *operand);
+    void emit();
+    void relocate_temporary();
+};
+

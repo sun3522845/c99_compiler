@@ -1,0 +1,5 @@
+#!/bin/sh
+[ $# -ne 1 ] && echo "Usage:uccdump file.c"
+C_FILE=$1
+ASM_FILE=$(echo $C_FILE|sed -e 's/c$/s/') 
+/tmp/ucl $C_FILE && cat $ASM_FILE

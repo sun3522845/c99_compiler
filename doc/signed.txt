@@ -1,0 +1,30 @@
+or
+xor
+and
+shl 
+shr  sar
+add
+sub
+imul
+div  idiv
+
+neg
+not
+
+je
+jne
+ja jg 
+jb jl
+jae jge
+jbe jle
+
+movzb movsb
+movzw movsw
+movb
+movw
+
+lea
+call
+jmp
+push
+pop

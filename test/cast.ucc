@@ -1,0 +1,31 @@
+extend_signed_to_signed:
+	movsbl -4(%ebp), %eax
+	movl %eax, -8(%ebp)
+
+extend_signed_to_unsigned:
+	movsbl -4(%ebp), %eax
+	movl %eax, -8(%ebp)
+
+extend_unsigned_to_signed:
+	movzbl -4(%ebp), %eax
+	movl %eax, -8(%ebp)
+
+extend_unsigned_to_unsigned:
+	movzbl -4(%ebp), %eax
+	movl %eax, -8(%ebp)
+
+truncate_signed_to_signed:
+	movl -8(%ebp), %eax
+	movb %al, -4(%ebp)
+
+truncate_signed_to_unsigned:
+	movl -8(%ebp), %eax
+	movb %al, -4(%ebp)
+
+truncate_unsigned_to_signed:
+	movl -8(%ebp), %eax
+	movb %al, -4(%ebp)
+
+truncate_unsigned_to_unsigned:
+	movl -8(%ebp), %eax
+	movb %al, -4(%ebp)

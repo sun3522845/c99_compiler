@@ -1,0 +1,4 @@
+#!/bin/sh
+./c99 $* >/tmp/test.S &&
+cc /tmp/test.S -o /tmp/test &&
+/tmp/test

@@ -1,0 +1,5 @@
+#!/bin/sh
+[ $# -ne 1 ] && echo "Usage:tccdump file.c"
+C_FILE=$1
+OBJECT_FILE=$(echo $C_FILE|sed -e 's/c$/o/') 
+tcc -c $C_FILE && objdump -d $OBJECT_FILE

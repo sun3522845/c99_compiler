@@ -1,0 +1,3 @@
+transient local callee-saved-register old-ebp return-address argument
+                                      ^  
+                                      ebp

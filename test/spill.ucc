@@ -1,0 +1,34 @@
+spill:
+	subl $52, %esp
+
+	movl a, %eax
+	incl a
+
+	movl b, %ecx
+	incl b
+
+	movl c, %edx
+	incl c
+
+	movl d, %ebx
+	incl d
+
+	movl e, %esi
+	incl e
+
+	movl f, %edi
+	incl f
+
+        # grab register eax 
+	movl %eax, -4(%ebp)
+	movl g, %eax
+	incl g
+
+	addl %eax, %edi
+	addl %edi, %esi
+	addl %esi, %ebx
+	addl %ebx, %edx
+	addl %edx, %ecx
+	movl -4(%ebp), %eax
+	addl %ecx, %eax
+	movl %eax, x
